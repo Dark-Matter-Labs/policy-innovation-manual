@@ -36,7 +36,14 @@ playbook.html       05 · EU Policy Labs Playbook (for practitioners)
 resources.html      06 · The Navigation Kit — tools & templates
 assets/css/styles.css   the whole design system (one file)
 assets/js/app.js        shared nav, the Navigator toggle, case filters, mobile menu
+assets/img/             NetZeroCities logo + icon mark (official brand assets)
 ```
+
+### Sources fed in
+Built from the D6.7 delivery report **and** the wider User Manual set: the MDPI Navigation Kit deck (the five-practice methodology on `resources.html`), the Architecture Information workbook (the folder/README information architecture), and the EU Labs README template. The delivery report remains the source of record for support tiers; the Navigation Kit is the source for the five practices.
+
+### Branding
+NetZeroCities logo sits in the sidebar (and mobile bar); the accent colour is the NZC petrol teal (`#0d5364`, sampled from the logo). The EU emblem and Horizon 2020 funding statement are in every footer. Assets live in `assets/img/`.
 
 ### The two-axis idea
 The core navigation concept — read the work by **support level** *or* by **method** — lives in two places:

@@ -42,8 +42,12 @@
     var rail = document.querySelector("[data-rail]");
     if (!rail) return;
 
+    var logo = el("a", { class: "rail__logo", href: "https://netzerocities.eu/", target: "_blank", rel: "noopener", "aria-label": "NetZeroCities" }, [
+      el("img", { src: "assets/img/nzc-logo-stacked.png", alt: "NetZeroCities", width: "70", height: "70" })
+    ]);
+
     var brand = el("a", { class: "brand", href: "index.html" }, [
-      el("span", { class: "brand__kicker", text: "NetZeroCities · Task 6.5" }),
+      el("span", { class: "brand__kicker", text: "Task 6.5" }),
       el("span", { class: "brand__title", text: "Mission Policy Innovation Navigation Kit" }),
       el("span", { class: "brand__sub", text: "Policy & Regulatory Innovation" })
     ]);
@@ -74,6 +78,7 @@
       if (i < arr.length - 1) foot.appendChild(el("br"));
     });
 
+    rail.appendChild(logo);
     rail.appendChild(brand);
     rail.appendChild(nav);
     rail.appendChild(foot);
@@ -84,8 +89,11 @@
     if (!tb) return;
 
     var brand = el("a", { class: "topbar__brand", href: "index.html" }, [
-      document.createTextNode("Navigation Kit"),
-      el("small", { text: "NetZeroCities · Task 6.5" })
+      el("img", { class: "topbar__logo", src: "assets/img/nzc-logo-stacked.png", alt: "NetZeroCities", width: "34", height: "34" }),
+      el("span", {}, [
+        document.createTextNode("Navigation Kit"),
+        el("small", { text: "NetZeroCities · Task 6.5" })
+      ])
     ]);
     var btn = el("button", { class: "menu-btn", "aria-expanded": "false", "aria-controls": "rail", text: "Menu" });
     tb.appendChild(brand);

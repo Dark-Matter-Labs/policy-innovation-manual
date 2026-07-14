@@ -17,18 +17,21 @@
   --hair:         #d9d2c4;
   --hair-strong:  #c8c0ae;
 
-  /* Accent — considered evergreen, not eco-cliché */
-  --accent:       #1c4a3f;
-  --accent-deep:  #123028;
-  --accent-tint:  #dfe8e1;
+  /* Accent — NetZeroCities petrol teal (sampled from the NZC logo, #0d5364) */
+  --accent:       #0d5364;
+  --accent-deep:  #073a47;
+  --accent-tint:  #d6e6ea;
 
-  /* Functional tier colours */
-  --tier-integrated: #a9622b;  /* clay   */
-  --tier-light:      #2c7382;  /* teal   */
-  --tier-deep:       #1c4a3f;  /* green  */
+  /* Functional tier colours — a clay-to-petrol scale, on brand with NZC */
+  --tier-integrated: #a9622b;  /* clay        */
+  --tier-light:      #2c7f90;  /* mid teal    */
+  --tier-deep:       #0d5364;  /* NZC petrol  */
   --tier-integrated-tint: #f0e3d5;
-  --tier-light-tint:      #dcebee;
-  --tier-deep-tint:       #dfe8e1;
+  --tier-light-tint:      #d9ebee;
+  --tier-deep-tint:       #d6e6ea;
+
+  /* NZC brand */
+  --nzc: #0d5364;
 
   /* Practitioner / grey-learning highlight */
   --practitioner-bg:   #efe7d7;
@@ -349,6 +352,62 @@ a.card:hover .card__arrow { transform: translate(2px,-2px); color: var(--accent)
 .sitefoot__inner strong { color: var(--ink-soft); font-weight: 600; }
 .disclaimer { margin-top: 1rem; font-size: .64rem; color: var(--faint); max-width: 44rem; }
 
+/* ---------- NZC logo in rail ---------- */
+.rail__logo { display: block; margin-bottom: .2rem; }
+.rail__logo img { width: 4.4rem; height: auto; }
+.topbar__logo { height: 1.9rem; width: auto; display: block; }
+
+/* ---------- MDPI equation (Mission + Policy + Innovation) ---------- */
+.mdpi-eq { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; align-items: center; gap: .8rem; margin: 2rem 0; }
+.mdpi-eq .term { border: 1px solid var(--hair); background: var(--paper); border-radius: var(--radius); padding: 1.2rem 1.1rem; text-align: center; }
+.mdpi-eq .term h4 { font-family: var(--display); font-size: 1.25rem; margin-bottom: .5rem; }
+.mdpi-eq .term p { margin: 0; font-size: .92rem; line-height: 1.45; color: var(--muted); }
+.mdpi-eq .op { font-family: var(--display); font-size: 1.8rem; color: var(--accent); text-align: center; }
+.mdpi-eq__result { margin: 0 0 2rem; padding: 1.3rem 1.4rem; background: var(--accent); color: var(--paper); border-radius: var(--radius); text-align: center; }
+.mdpi-eq__result strong { font-family: var(--display); font-weight: 500; font-size: 1.35rem; display: block; margin-bottom: .4rem; }
+.mdpi-eq__result span { font-size: 1.02rem; color: #cfe2e7; }
+@media (max-width: 680px){ .mdpi-eq { grid-template-columns: 1fr; } .mdpi-eq .op { font-size: 1.3rem; } }
+
+/* ---------- Practice blocks (Navigation Kit) ---------- */
+.practice { border: 1px solid var(--hair); border-radius: 5px; overflow: hidden; margin: 1.4rem 0; background: var(--paper); scroll-margin-top: 2rem; }
+.practice__head { padding: 1.1rem 1.4rem; display: flex; align-items: baseline; gap: .9rem; color: var(--paper); }
+.practice__n { font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; opacity: .8; }
+.practice__head h3 { font-size: 1.4rem; color: var(--paper); }
+.practice__head .sub { margin-left: auto; font-family: var(--mono); font-size: .62rem; letter-spacing: .06em; text-transform: uppercase; opacity: .85; text-align: right; }
+.practice__body { padding: 1.4rem; }
+.p4grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem,1fr)); gap: 1.2rem 1.5rem; }
+.p4grid h4 { font-family: var(--mono); font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); margin: 0 0 .5rem; font-weight: 500; }
+.p4grid p, .p4grid ul { margin: 0; font-size: .98rem; line-height: 1.5; }
+.p4grid ul { padding-left: 1.05rem; }
+.p4grid li { margin-bottom: .35rem; }
+/* practice colour bands (echoing the Navigation Kit deck) */
+.pr-1 .practice__head { background: #3f7d6e; }   /* strategic agenda — teal-green */
+.pr-2 .practice__head { background: #6d5f9c; }   /* understanding — purple */
+.pr-3 .practice__head { background: #c69a2e; }   /* curating — ochre */
+.pr-4 .practice__head { background: #5c8a52; }   /* formalising — green */
+.pr-5 .practice__head { background: var(--accent); } /* reflect & learn — petrol */
+
+/* default → mission-driven shift */
+.shiftbox { margin-top: 1.3rem; padding-top: 1.2rem; border-top: 1px solid var(--hair); display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: stretch; }
+.shiftbox__col { }
+.shiftbox__label { font-family: var(--mono); font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: .5rem; display: block; }
+.shiftbox__col.from .shiftbox__label { color: var(--faint); }
+.shiftbox__col.to .shiftbox__label { color: var(--accent); }
+.shiftbox ul { margin: 0; padding-left: 1rem; font-size: .92rem; line-height: 1.45; color: var(--ink-soft); }
+.shiftbox li { margin-bottom: .4rem; }
+.shiftbox .arrow { align-self: center; color: var(--accent); font-size: 1.3rem; }
+.shiftbox__col.from { opacity: .72; }
+@media (max-width: 680px){ .shiftbox { grid-template-columns: 1fr; } .shiftbox .arrow { transform: rotate(90deg); } }
+
+/* ---------- Kit process diagram ---------- */
+.kit-diagram { margin: 2rem 0; border: 1px solid var(--hair); border-radius: 5px; background: var(--paper); padding: 1.2rem; overflow-x: auto; }
+.kit-diagram svg { display: block; width: 100%; height: auto; min-width: 34rem; }
+
+/* ---------- EU / funding footer ---------- */
+.eu { display: flex; align-items: center; gap: 1rem; margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px solid var(--hair); }
+.eu__flag { flex: none; width: 3rem; height: 2rem; border-radius: 2px; }
+.eu p { margin: 0; font-family: var(--mono); font-size: .6rem; line-height: 1.6; color: var(--faint); letter-spacing: .02em; }
+
 /* ---------- Reveal on load ----------
    Pure CSS, triggered by the tiny inline <head> script that adds `.js`.
    Deliberately TRANSFORM-ONLY: the element is always fully opaque, so if
@@ -379,7 +438,7 @@ html.js .reveal:nth-child(5){ animation-delay:.24s }
     position: sticky; top: 0; z-index: 40; padding: .9rem var(--gutter);
     background: rgba(246,243,236,.9); backdrop-filter: blur(8px); border-bottom: 1px solid var(--hair);
   }
-  .topbar__brand { font-family: var(--display); font-size: 1.05rem; text-decoration: none; color: var(--ink); }
+  .topbar__brand { display: flex; align-items: center; gap: .6rem; font-family: var(--display); font-size: 1.05rem; text-decoration: none; color: var(--ink); }
   .topbar__brand small { display: block; font-family: var(--mono); font-size: .54rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
   .menu-btn { border: 1px solid var(--hair-strong); background: var(--paper); border-radius: var(--radius); padding: .5rem .8rem; font-family: var(--mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; }
   .scrim { position: fixed; inset: 0; background: rgba(26,25,23,.35); opacity: 0; pointer-events: none; transition: opacity .3s ease; z-index: 45; }
