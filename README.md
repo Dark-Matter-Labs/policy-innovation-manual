@@ -18,9 +18,28 @@ python3 -m http.server 8137
 
 Or just open `index.html` in a browser (the shared navigation is injected by `assets/js/app.js`, which works from `file://` too).
 
+## Password (temporary)
+
+The site is currently behind a **client-side password gate** (`assets/js/gate.js`).
+
+- **Current password:** `mdpi2026`
+- It's a soft gate to deter casual access before sharing — **not real security**. The page content is still in the downloaded HTML, so anyone determined can bypass it. For genuine protection, use host-level password protection when you deploy (Netlify site password / Vercel deployment protection — see below).
+- Once entered, it stays unlocked for that browser session (no re-prompt when moving between pages).
+
+**To change the password:** replace `PASS_HASH` in `assets/js/gate.js` with the SHA-256 hex of the new password. Generate it in a browser console:
+```js
+await crypto.subtle.digest('SHA-256', new TextEncoder().encode('YOURPASSWORD'))
+  .then(b => [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join(''))
+```
+(Or just ask and I'll set it.)
+
+**To remove the gate entirely:** delete the `<script src="assets/js/gate.js"></script>` line and the `gate-locked` bit of the inline `<script>` in each HTML `<head>`.
+
 ## Deploy it
 
 Drag the whole folder onto **Netlify Drop** (app.netlify.com/drop), or connect the repo to **Vercel** / **GitHub Pages**. No configuration needed — it's static HTML/CSS/JS. Nothing is published until you choose to deploy.
+
+For **real** password protection (rather than the client-side gate above): Netlify → Site configuration → *Password protection* (site-wide password, on paid plans), or Vercel → Project → *Deployment Protection*. These gate the files at the server, so the content is never served without the password. Once one of those is on, you can remove the client-side gate.
 
 ---
 

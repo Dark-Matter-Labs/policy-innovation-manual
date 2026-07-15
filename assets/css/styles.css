@@ -453,3 +453,49 @@ html.js .reveal:nth-child(5){ animation-delay:.24s }
   body { font-size: 1.08rem; }
   .navigator__head { flex-direction: column; align-items: flex-start; }
 }
+
+/* ---------- Password gate (temporary, client-side) ---------- */
+html.gate-locked { overflow: hidden; }
+html.gate-locked body { overflow: hidden; }
+html.gate-locked .shell,
+html.gate-locked .topbar,
+html.gate-locked .scrim { display: none !important; }
+
+.gate {
+  position: fixed; inset: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: center;
+  padding: 1.5rem;
+  background: linear-gradient(180deg, #f6f3ec 0%, #ece7db 100%);
+}
+.gate::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+}
+.gate__card {
+  position: relative; z-index: 1;
+  width: min(30rem, 100%); background: var(--paper);
+  border: 1px solid var(--hair); border-radius: 6px; box-shadow: var(--shadow-md);
+  padding: 2.4rem 2.2rem 2rem; text-align: center;
+}
+.gate__logo { width: 4.5rem; height: auto; margin: 0 auto 1.4rem; display: block; }
+.gate__title { font-family: var(--display); font-size: 1.5rem; font-weight: 500; line-height: 1.12; letter-spacing: -.01em; }
+.gate__sub { font-family: var(--body); font-size: 1rem; line-height: 1.5; color: var(--muted); margin: .9rem 0 1.6rem; }
+.gate__form { display: flex; gap: .6rem; }
+.gate__input {
+  flex: 1; font-family: var(--mono); font-size: .95rem; padding: .7rem .9rem;
+  border: 1px solid var(--hair-strong); border-radius: var(--radius); background: var(--paper); color: var(--ink);
+}
+.gate__input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+.gate__btn {
+  font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+  border: 0; background: var(--accent); color: var(--paper); padding: .7rem 1.3rem; border-radius: var(--radius); cursor: pointer;
+  transition: background .18s ease;
+}
+.gate__btn:hover { background: var(--accent-deep); }
+.gate__err { font-family: var(--mono); font-size: .72rem; letter-spacing: .02em; color: #a3341f; margin: 1rem 0 0; }
+.gate__card--shake { animation: gateShake .4s cubic-bezier(.36,.07,.19,.97); }
+@keyframes gateShake {
+  10%,90%{transform:translateX(-1px)} 20%,80%{transform:translateX(2px)}
+  30%,50%,70%{transform:translateX(-4px)} 40%,60%{transform:translateX(4px)}
+}
+@media (prefers-reduced-motion: reduce){ .gate__card--shake { animation: none; } }
