@@ -204,11 +204,15 @@ a.card:hover .card__arrow { transform: translate(2px,-2px); color: var(--accent)
 .navigator__title { font-family: var(--mono); font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft); }
 .toggle { display: inline-flex; border: 1px solid var(--hair-strong); border-radius: 100px; overflow: hidden; background: var(--paper); }
 .toggle button {
-  font-family: var(--mono); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase;
-  border: 0; background: transparent; color: var(--muted); padding: .55rem 1.1rem; cursor: pointer;
+  font-family: var(--mono); font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; font-weight: 500;
+  border: 0; background: transparent; color: var(--ink-soft); padding: .7rem 1.35rem; cursor: pointer;
   transition: background .2s ease, color .2s ease;
 }
-.toggle button[aria-pressed="true"] { background: var(--accent); color: var(--paper); }
+.toggle button[aria-pressed="true"] { background: var(--accent); color: var(--paper); box-shadow: var(--shadow-sm); }
+.navigator__head { padding: 1.25rem 1.4rem; }
+.navigator__title { font-size: .74rem; }
+/* nudge to make the two lenses unmissable */
+.navigator__hint { font-family: var(--mono); font-size: .62rem; letter-spacing: .04em; color: var(--faint); text-transform: none; margin-top: .35rem; }
 .navigator__body { padding: 1.3rem; }
 .axis { margin-bottom: 1.4rem; }
 .axis:last-child { margin-bottom: 0; }
@@ -268,8 +272,14 @@ a.card:hover .card__arrow { transform: translate(2px,-2px); color: var(--accent)
   font-size: .58rem; letter-spacing: .12em; background: var(--practitioner-edge); color: #f6f3ec;
   padding: .25rem .55rem; border-radius: 100px;
 }
-.practitioner > summary .caret { margin-left: auto; transition: transform .2s ease; }
-.practitioner[open] > summary .caret { transform: rotate(90deg); }
+.practitioner > summary .caret { display: none; }
+.practitioner > summary::after {
+  content: "Read more"; margin-left: auto;
+  font-family: var(--mono); font-size: .62rem; letter-spacing: .1em; text-transform: uppercase;
+  color: #f6f3ec; background: var(--practitioner-edge);
+  border-radius: 100px; padding: .3rem .7rem; white-space: nowrap;
+}
+.practitioner[open] > summary::after { content: "Close"; background: transparent; color: var(--practitioner-edge); border: 1px solid var(--practitioner-edge); }
 .practitioner__body { padding: 0 1.3rem 1.3rem; }
 .practitioner__body p { font-size: 1.02rem; }
 .practitioner__body ul { margin: 0; padding: 0; list-style: none; }

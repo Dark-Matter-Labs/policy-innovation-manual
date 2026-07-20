@@ -1,8 +1,8 @@
-# Mission Policy Innovation Navigation Kit
+# Policy Innovation User Manual
 
-A public knowledge-base website for **NetZeroCities Task 6.5 — Policy & Regulatory Innovation**, built from the D6.7 *Policy, Governance and Labs* report (SGA1). Lead: Dark Matter Labs, with Demos Helsinki and the NetZeroCities consortium.
+A public knowledge-base website for **NetZeroCities Task 6.5 — Policy & Regulatory Innovation** (supra: *Climate-Neutral Mission Cities*; subtitle: *Insights for Regulatory Transformations*). Built from the D6.7 *Policy, Governance and Labs* report and the wider MDPI User Manual source set (SGA1). Lead: Dark Matter Labs, with Demos Helsinki and the NetZeroCities consortium.
 
-It describes what Mission-Driven Policy Innovation is, the **Integrated / Light / Deep** support model, the four methods (**Studio · Lab · Sprint · Sandbox**), the practice cases behind them, the cross-cutting lessons, and the EU Policy Labs practitioner playbook.
+It describes what Mission-Driven Policy Innovation is, the **Integrated / Light / Deep** support model, the four methods (**Studio · Lab · Sprint · Sandbox**), the practice cases behind them, the cross-cutting lessons, the Sprint Labs practitioner playbook, and the Navigation Kit (the five-practice methodology and its tools).
 
 ---
 
@@ -45,21 +45,32 @@ For **real** password protection (rather than the client-side gate above): Netli
 
 ## Structure
 
+Four nav groups — **Overview · Evidence · For practitioners · Lineage**:
+
 ```
-index.html          00 · Introduction — what MDPI is + the two-axis Navigator
-support-model.html  01 · Integrated / Light / Deep
-methods.html        02 · Studio · Lab · Sprint · Sandbox (+ the methods matrix)
-cases.html          03 · Practice cases, filterable by level & method
-lessons.html        04 · Cross-cutting lessons + the five shifts
-playbook.html       05 · EU Policy Labs Playbook (for practitioners)
-resources.html      06 · The Navigation Kit — tools & templates
+Overview
+  index.html              00 · Introduction — what the manual is + the two-axis Navigator
+  policy-innovation.html  01 · Policy Innovation — what MDPI is, the three tracks, three learnings
+  support-model.html      02 · Integrated / Light / Deep
+  methods.html            03 · Studio · Lab · Sprint · Sandbox (+ the methods matrix)
+Evidence
+  cases.html              04 · Practice cases, filterable by level & method
+  lessons.html            05 · Cross-cutting lessons + the five shifts
+For practitioners
+  playbook.html           06 · Sprint Labs Playbook
+  navigation-kit.html     07 · The Navigation Kit — MDPI definition + the five practices
+  tools.html              08 · Tools & canvases + linked resources
+Lineage
+  credits.html            09 · Credits, lineage & funding
+
 assets/css/styles.css   the whole design system (one file)
 assets/js/app.js        shared nav, the Navigator toggle, case filters, mobile menu
+assets/js/gate.js       the temporary client-side password gate
 assets/img/             NetZeroCities logo + icon mark (official brand assets)
 ```
 
 ### Sources fed in
-Built from the D6.7 delivery report **and** the wider User Manual set: the MDPI Navigation Kit deck (the five-practice methodology on `resources.html`), the Architecture Information workbook (the folder/README information architecture), and the EU Labs README template. The delivery report remains the source of record for support tiers; the Navigation Kit is the source for the five practices.
+Built from the D6.7 delivery report **and** the wider User Manual set: the MDPI Navigation Kit deck (the five-practice methodology on `navigation-kit.html`), the Architecture Information workbook (the folder/README information architecture and the four-group nav), and the EU Labs README template. The delivery report remains the source of record for support tiers; the Navigation Kit deck is the source for the five practices.
 
 ### Branding
 NetZeroCities logo sits in the sidebar (and mobile bar); the accent colour is the NZC petrol teal (`#0d5364`, sampled from the logo). The EU emblem and Horizon 2020 funding statement are in every footer. Assets live in `assets/img/`.
@@ -80,7 +91,7 @@ Per the agreed content policy, the candid *grey learnings* and the full Playbook
 
 - **Content** lives directly in the HTML — edit the relevant page.
 - **Navigation** is defined once, in the `NAV` array at the top of `assets/js/app.js`. Add or reorder pages there.
-- **Design tokens** (colours, fonts, spacing) are CSS variables at the top of `assets/css/styles.css`. The three tier colours — clay (Integrated), teal (Light), evergreen (Deep) — are `--tier-integrated`, `--tier-light`, `--tier-deep`.
+- **Design tokens** (colours, fonts, spacing) are CSS variables at the top of `assets/css/styles.css`. The three tier colours — clay (Integrated), teal (Light), petrol (Deep) — are `--tier-integrated`, `--tier-light`, `--tier-deep`; the brand accent `--accent` is the NZC petrol teal.
 
 ## Design notes
 

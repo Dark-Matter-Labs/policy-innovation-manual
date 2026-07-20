@@ -21,17 +21,22 @@
   /* ---- Shared navigation model (single source of truth) ---- */
   var NAV = [
     { group: "Overview", items: [
-      { href: "index.html",         idx: "00", label: "Introduction" },
-      { href: "support-model.html", idx: "01", label: "Support Model" },
-      { href: "methods.html",       idx: "02", label: "Methods" }
+      { href: "index.html",             idx: "00", label: "Introduction" },
+      { href: "policy-innovation.html", idx: "01", label: "Policy Innovation" },
+      { href: "support-model.html",     idx: "02", label: "Support Model" },
+      { href: "methods.html",           idx: "03", label: "Methods" }
     ]},
     { group: "Evidence", items: [
-      { href: "cases.html",   idx: "03", label: "Practice Cases" },
-      { href: "lessons.html", idx: "04", label: "Lessons & Direction" }
+      { href: "cases.html",   idx: "04", label: "Practice Cases" },
+      { href: "lessons.html", idx: "05", label: "Lessons & Direction" }
     ]},
     { group: "For practitioners", items: [
-      { href: "playbook.html",  idx: "05", label: "EU Policy Labs Playbook" },
-      { href: "resources.html", idx: "06", label: "Tools & Navigation Kit" }
+      { href: "playbook.html",       idx: "06", label: "Sprint Labs Playbook" },
+      { href: "navigation-kit.html", idx: "07", label: "Navigation Kit" },
+      { href: "tools.html",          idx: "08", label: "Tools" }
+    ]},
+    { group: "Lineage", items: [
+      { href: "credits.html", idx: "09", label: "Credits" }
     ]}
   ];
 
@@ -47,9 +52,9 @@
     ]);
 
     var brand = el("a", { class: "brand", href: "index.html" }, [
-      el("span", { class: "brand__kicker", text: "Task 6.5" }),
-      el("span", { class: "brand__title", text: "Mission Policy Innovation Navigation Kit" }),
-      el("span", { class: "brand__sub", text: "Policy & Regulatory Innovation" })
+      el("span", { class: "brand__kicker", text: "Climate-Neutral Mission Cities" }),
+      el("span", { class: "brand__title", text: "Policy Innovation User Manual" }),
+      el("span", { class: "brand__sub", text: "Insights for Regulatory Transformations" })
     ]);
 
     var nav = el("nav", { class: "nav", "aria-label": "Sections" });
@@ -91,7 +96,7 @@
     var brand = el("a", { class: "topbar__brand", href: "index.html" }, [
       el("img", { class: "topbar__logo", src: "assets/img/nzc-logo-stacked.png", alt: "NetZeroCities", width: "34", height: "34" }),
       el("span", {}, [
-        document.createTextNode("Navigation Kit"),
+        document.createTextNode("Policy Innovation User Manual"),
         el("small", { text: "NetZeroCities · Task 6.5" })
       ])
     ]);
